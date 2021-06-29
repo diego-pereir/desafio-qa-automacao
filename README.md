@@ -1,35 +1,49 @@
-# Desafio Análise Automação Web
+## Installation
 
-**Você deverá:**
-1. Completar os cenários que estão somente com título dentro da pasta **features/spec**, utilizando Gherkin;
-2. Acessar a página http://automationpractice.com, inspecionar e mapear os elementos de acordo com os mapeamentos esperados para as páginas Home e Login, que estão dentro da pasta **features/pages**;
-3. Criar os Steps para o Gherkin que foi descrito no primeiro passo, montando a lógica necessária para implementar as ações e validações.
+*Segue abaixo os passos para instalação*
 
-**Diferenciais:** 
-- Projeto com os testes executáveis, seguindo a estrutura de exemplo;
-- Implementar cenário extra de adição de produto ao carrinho;
+*1. Instalando Ruby 64 Bits*
+* a) Fazer download da versão 2.4.2 x64 http://rubyinstaller.org/downloads/
+* b) Instalar no diretório C:\Ruby24-x64
+* c) Antes de clicar em Install marcar todas as opções.
+* c) Feche o console, e abra novamente, em seguida, digite o comando ruby –v, se der tudo certo você vai ver o seguinte resultado:
 
-**Dicas:** 
-- Mesmo não conseguindo finalizar 100% do projeto, nos envie mesmo assim. Nós avaliamos diversos itens, como: lógica, estrutura e conhecimentos nas ferramentas.
-- O projeto não precisa necessariamente ser executável, o mais importante é mostrar o conhecimento para escrita de cenários, mapeamento de elementos e lógica para implementação, então descreva os steps da melhor maneira possível, sem se preocupar com sintaxe.
+ ruby 2.4.1p111 (2017-03-22 revision 58053) [x64-mingw32]
 
-------------
 
-## Sobre a execução do projeto: 
-Para a realização deste desafio, é somente necessário um editor de texto, **não esperamos um código executável**, contudo, caso você deseje executar o projeto, pode seguir os passos abaixo.
+*2. Instalando Devkit 64 Bits*
+* a) http://dl.bintray.com/oneclick/rubyinstaller/DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe
+* b) Descompactar no diretório C:\Ruby24-x64\devkit
+* c) No console, acessar via linha de comando, a pasta onde foi instalado o DEVKIT.
+* d) Na sequencia digite o comando:
+ruby dk.rb init
+* e) Agora abra o arquivo config.yml que foi gerado
+* f) A ultima linha do arquivo deve conter o valor : -C:/Ruby24-x64. Caso contrário faça o ajuste no arquivo. Não esqueça do caractere - antes do C:\.
+* g) No Console do Cmder, digite o comando: 
+ruby dk.rb install
 
-Para poder executar, você deverá ter:
-- Ruby >= 2.5.x;
-- Chrome e Chromedriver na última versão estável.
 
-Comandos a serem executados a partir da raíz do projeto:
+*3. Instalando Bundler, RSpec e Cucumber*
+* Bundler: gem install bundler
+* RSpec: gem install rspec
+* Cucumber: gem install cucumber
 
-Instalar as dependências:
-```ruby
-bundle install
-```
 
-Executar o projeto - teste de carregamento básico:
-```ruby
+*4. Instalando as dependências do projeto através do Bundler*
+Dentro da pasta raiz do projeto executar o comando bundler install. 
+Ao executar o comando todas as dependências devem ser instaladas. Para checar que todas foram instaladas verificar se o log bate com as dependências especificadas no arquivo Gemfile.
+Caso não tenha sido instalado alguma dependência por algum motivo, é necessário realizar a instalação manualmente, caso o comando bundler install ainda não funcione. Para tal, verificar qual dependência faltou e executar o comando gem install <nome_da_dependencia>.
+
+*5. Adicionando o chrome driver no lugar certo*
+ * Realizar o download do chrome driver para windows.
+ * Extrair o arquivo chromedriver.exe para o diretório: C:\Ruby24-x64\bin
+
+
+## Running
+
+*Executando o projeto*
+*Nova estrutura*
+
 bundle exec cucumber -p default -t@buscar_por_termo_valido
-```
+
+os titulos para o termo @ estão dentro do diretório features/spec
