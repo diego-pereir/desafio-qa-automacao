@@ -42,7 +42,6 @@ Caso não tenha sido instalado alguma dependência por algum motivo, é necessá
 ## Running
 
 *Executando o projeto*
-*Nova estrutura*
 
 bundle exec cucumber -p default -t@buscar_por_termo_valido
 
